@@ -117,7 +117,7 @@
 #     pikkus=float(input("Siseta oma pikkus: "))
 #     if pikkus>165:
 #         print("Sa oled pikk")
-#     elif pikkus==165
+#     elif pikkus==165:
 #         print("Sul on keskmine pikkus")
 #     else:
 #         print("Sa oled lühike")
@@ -125,25 +125,75 @@
 #     print("Viga!Kirjuta oma pikkus")
 
 # #Ülesanne 7
-try:
-    pikkus=float(input("Siseta oma pikkus: "))
-    sugu=input("Sisita oma sugu: ").strip().lower()
+# try:
+#     pikkus=float(input("Siseta oma pikkus: "))
+#     sugu=input("Sisita oma sugu: ").strip().lower()
 
-    if pikkus>165:
-        print("Sa oled pikk,", end=" ")
-    elif pikkus==165:
-        print("Sul on keskmine pikkus,", end=" ")
-    else:
-        print("Sa oled lühike,", end=" ")
+#     if pikkus>165:
+#         print("Sa oled pikk,", end=" ")
+#     elif pikkus==165:
+#         print("Sul on keskmine pikkus,", end=" ")
+#     else:
+#         print("Sa oled lühike,", end=" ")
 
-        if sugu=="naine":
-            print("Sa oled naine.")
-        elif sugu=="mees":
-            print("Sa oled mees.")
-        else:
-            print("Kirjuta sa oled mees või naine!!!!")
+#         if sugu=="naine":
+#             print("Sa oled naine.")
+#         elif sugu=="mees":
+#             print("Sa oled mees.")
+#         else:
+#             print("Kirjuta sa oled mees või naine!!!!")
 
-except ValueError:
-    print("Viga!Kirjuta oma pikkus.")
-
+# except ValueError:
+#     print("Viga!Kirjuta oma pikkus.")
 #Ülesanne 8
+try:
+    leib=input("Kas sa tahad osta leiba jah/ei: ")
+    if leib=="ei":
+        kui_l=0
+        print("OK")
+    else:
+        kui_l=float(input("Sisita kui palju sa tahad: "))
+    piim=input("Kas sa tahad osta piima jah/ei: ")
+    if piim=="ei":
+        kui_p=0
+        print("OK")
+    else:
+        kui_p=float(input("Sisita kui palju sa tahad: "))
+    porgand=input("Kas sa tahad osta porgand jah/ei: ")
+    if porgand=="ei":
+        kui_po=0
+        print("OK")
+    else:
+        kui_po=float(input("Sisita kui palju sa tahad: "))
+    riis=input("Kas sa tahad osta riisi jah/ei: ")
+    if riis=="ei":
+        kui_r=0
+        print("OK")
+    else:
+        kui_r=float(input("Sisita kui palju sa tahad: "))
+    kana=input("Kas sa tahad osta kana jah/ei: ")
+    if kana=="ei":
+        kui_k=0
+        print("OK")
+    else:
+        kui_k=float(input("Sisita kui palju sa tahad: "))
+
+    if kui_l>1 or kui_l>1 or kui_po>1 or kui_k>1 or kui_r>1 and kui_po>1:
+        leib=kui_l*0.59
+        piim=kui_p*0.45
+        porgand=kui_po*0.89
+        riis=kui_r*0.39
+        kana=kui_k*4.59
+        kokku=riis+piim+leib+kana+porgand
+        print("---------tšekk---------")
+        print(f"{kui_l}xleib       {leib}")
+        print(f"{kui_p}xpimm       {piim}")
+        print(f"{kui_po}kg porgand  {porgand}")
+        print(f"{kui_r}kg riis     {riis}")
+        print(f"{kui_k}xkana       {kana}")
+        print(f"KOKKU:-------{kokku}")
+        print("---------tšekk---------")    
+    else:
+        print("KIRJUTA ARV!!")
+except:
+    print("VIGA")
